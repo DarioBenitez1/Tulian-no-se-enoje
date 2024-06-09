@@ -1,0 +1,14 @@
+[
+    {
+        "id":"1",
+        "nombre":"LGTI",
+        "grado":"grado",
+        "universidad":"UNPAZ"
+    },
+    {
+        "id":"2",
+        "nombre":"Lic. Administracion",
+        "grado":"grado",
+        "universidad":"UNPAZ"
+    }
+]

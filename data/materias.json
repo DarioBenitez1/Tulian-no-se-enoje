@@ -1,26 +1,23 @@
 [
     {
         "id":"1",
-        "serie":"lost",
-        "plataforma":"netflix",
-        "disponible":"true"
+        "nombre":"Introduccion a la programacion",
+        "cuatrimestral":"true",
+        "anio":"1",
+        "carreraId":"1"
     },
     {
         "id":"2",
-        "serie":"vikingos",
-        "plataforma":"start+",
-        "disponible": false
+        "nombre":"Contabilidad",
+        "cuatrimestral":"true",
+        "anio":"1",
+        "carreraId":"2"
     },
     {
         "id":"3",
-        "serie":"SNK",
-        "plataforma":"animeFLV",
-        "disponible": false
-    },
-    {
-        "id":"4",
-        "serie":"doctor house",
-        "plataforma":"HBO",
-        "disponible": true
+        "nombre":"Lab. Programacion",
+        "cuatrimestral":"true",
+        "anio":"2",
+        "carreraId":"1"
     }
 ]
