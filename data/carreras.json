@@ -1,0 +1,14 @@
+[
+    {
+        "id" : 1,
+        "nombre" : "Licenciatura en Gestion de tecnologias de la informacion",
+        "grado" : "Grado",
+        "universidad" : "Universidad Nacional de Jose C Paz"
+    },
+    {
+        "id" : 2,
+        "nombre" : "Abogacia",
+        "grado" : "Grado",
+        "universidad" : "Universidad Nacional de Jose C Paz"
+    }
+]
