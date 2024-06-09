@@ -10,5 +10,12 @@
         "nombre" : "Abogacia",
         "grado" : "Grado",
         "universidad" : "Universidad Nacional de Jose C Paz"
+
+    },
+    {
+        "id": 3,
+        "nombre":"Licenciatura en Administracion",
+        "grado":"grado",
+        "universidad":"Universidad Nacional de Jose C Paz"
     }
 ]
