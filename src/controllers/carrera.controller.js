@@ -1,12 +1,18 @@
 const carrerasCtrl = {}
-// const series = require('../../data/data.json');
+const carreras = require('../../data/carreras.json');
 
-// seriesCtrl.getSeriesById = (req,res) => {
-//     const id = req.params.id
-//     const serie = series.find(s => s.id == id)
-//     res.status(200).json(serie)
-// }
+//Obtener una carrera en especifico mediante el ID
+ carrerasCtrl.getCarreraById = (req,res) => {
+    const id = req.params.id
+    const carrera = carreras.find(s => s.id == id)
+    if(!carrera){
+        res.status(404).json({error : 'carrera no encontrada'});
+    }
+    res.status(200).json(carrera)
+ };
 
+
+ 
 // seriesCtrl.createSerie = (req,res)=>{ 
 //     const serie=req.body //recupera lo que escribo en el body del postman.
 //     let id=1;

@@ -1,5 +1,5 @@
 const { Router } = require('express');
-//const seriesCtrl = require('../controllers/series.controller')
+const carrerasCtrl = require('../controllers/carrera.controller')
 //const seriesMiddle = require('../middleware/series.middleware')
 
 //const serieSchema = require('../schemas/series.schemas')
@@ -8,7 +8,7 @@ const { Router } = require('express');
 const router = Router()
 
 
-//router.get('/series/:id',seriesMiddle.validaExisteSerie,seriesCtrl.getSeriesById)
+router.get('/carrera/:id',carrerasCtrl.getCarreraById);
 //router.post(`/series`,schemaValidator(serieSchema),seriesCtrl.createSerie)
 
 
