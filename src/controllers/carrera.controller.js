@@ -29,7 +29,7 @@ carrerasCtrl.createCarrera = (req,res)=>{
 
      if(carreras.length){ //si lenght es cero entonces devuelve falso
         const ids=carreras.map(s=>s.id) //busca dentro de las carreras los ids
-         id=Math.max(...ids)+1  //busca el maximo id y le suma 1, para que se vaya incremantando
+         id=Math.max(...ids)+1  //busca el maximo id y le suma 1, para que se vaya incrementando
      }
     
       

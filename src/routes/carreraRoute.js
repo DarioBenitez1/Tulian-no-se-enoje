@@ -8,9 +8,9 @@ const carrerasMiddle = require('../middleware/carrera.middleware')
 const router = Router()
 
 //rutas
-router.get('/carrera/:id',carrerasMiddle.validaExisteSerie,carrerasCtrl.getCarreraById); //falta las validaciones
-router.get('/carrera',carrerasMiddle.validaCarrerasExisten,carrerasCtrl.getCarreras); //faltan las validaciones
-router.post('/carreras', carrerasCtrl.createCarrera); //faltan las validaciones
+router.get('/carrera/:id',carrerasMiddle.validaExisteCarrera,carrerasCtrl.getCarreraById); //falta las validaciones
+router.get('/carrera',carrerasCtrl.getCarreras); //faltan las validaciones
+router.post('/carrera', carrerasCtrl.createCarrera); //faltan las validaciones
 //router.post(`/carreras`,schemaValidator(carrerasSchema),carrerasCtrl.createSerie)
 
 
