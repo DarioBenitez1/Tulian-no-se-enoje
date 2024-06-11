@@ -8,9 +8,11 @@ const carrerasMiddle = require('../middleware/carrera.middleware')
 const router = Router()
 
 //rutas
-router.get('/carrera/:id',carrerasMiddle.validaExisteCarrera,carrerasCtrl.getCarreraById); 
+router.get('/carreras/:id',carrerasMiddle.validaExisteCarrera,carrerasCtrl.getCarreraById); 
 router.get('/carreras',carrerasMiddle.validaCarrerasExisten,carrerasCtrl.getCarreras);
 router.post('/carreras',carrerasMiddle.validarSolicitud, carrerasCtrl.createCarrera);
+router.get('/carreras',carrerasMiddle.validaCarrerasExisten ,carrerasCtrl.getCarreras);
+router.delete('/carreras/:id',carrerasMiddle.validaExisteCarrera ,carrerasCtrl.deleteCarreraById);
 //router.post(`/carreras`,schemaValidator(carrerasSchema),carrerasCtrl.createSerie)
 
 

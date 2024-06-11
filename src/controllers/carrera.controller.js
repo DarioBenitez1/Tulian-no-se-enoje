@@ -40,6 +40,25 @@ carrerasCtrl.createCarrera = (req,res)=>{
    }); 
     
    res.status(201).json(carreras[carreras.length-1]);
-}
+};
+
+carrerasCtrl.deleteCarreraById = (req, res) => {
+   const id = req.params.id;
+   const carrera = carreras.find(s => s.id == id)
+
+   if(!carrera){
+      res.status(404).json({error: 'No es posible encontrar la carrera solicitada'})
+   }
+   //aca hay dos opciones
+      //1 - no se puede borrar porque el ID de carrera va a estar en materias.
+      //2 - usar 'borrar materia' que tenga id de la carrera especificada. 
+   
+   const index = carreras.indexOf(carrera);
+   if(index > -1){
+      carreras.splice(index, 1);
+      //res.status(200).json(carreras);
+      res.status(200).json({message : 'carrera borrada exitosamente'});
+   }
+};
 
 module.exports = carrerasCtrl

@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(morgan('dev'))
 
 app.use(rutaCarreras)
-//app.use(rutaMaterias)
+app.use(rutaMaterias)
 
 
 
