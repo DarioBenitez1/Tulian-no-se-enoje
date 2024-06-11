@@ -6,15 +6,23 @@ const carreras = require('../../data/carreras.json');
     const id = req.params.id
     const carrera = carreras.find(s => s.id == id)
     if(!carrera){
-       return res.status(404).json({error : 'carrera no encontrada'});
+      return res.status(404).json({error : 'carrera no encontrada'});
     }
     res.status(200).json(carrera)
  };
 
+//Obtener todas las carreras
+carrerasCtrl.getCarreras = (req,res) => {
+   if(!carreras){
+      return res.status(404).json({error : 'No existen carreras creadas'});
+    }
+   res.status(200).json(carreras)
+};
+
  //Prueba de Robert
 
 
- //crear una carrera con un ID incremental
+//crear una carrera con un ID incremental
 carrerasCtrl.createCarrera = (req,res)=>{ 
      const carrera=req.body //recupera lo que escribo en el body del postman.
      let id=1; //empieza por defecto con 1 el ID 

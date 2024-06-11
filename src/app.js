@@ -1,6 +1,6 @@
 const express = require('express');
 //sirve para ver logs con nodemon
-const morgan = require('morgan')
+const morgan = require('morgan');
 
 //RUTAS
 const rutaCarreras = require('./routes/carreraRoute')

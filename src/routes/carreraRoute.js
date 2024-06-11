@@ -1,16 +1,17 @@
 const { Router } = require('express');
 const carrerasCtrl = require('../controllers/carrera.controller')
-//const seriesMiddle = require('../middleware/series.middleware')
+const carrerasMiddle = require('../middleware/carrera.middleware')
 
-//const serieSchema = require('../schemas/series.schemas')
+//const carreraschema = require('../schemas/carreras.schemas')
 //const schemaValidator = require('../middleware/schemaValidator')
 
 const router = Router()
 
 //rutas
-router.get('/carrera/:id',carrerasCtrl.getCarreraById); //falta las validaciones
+router.get('/carrera/:id',carrerasMiddle.validaExisteSerie,carrerasCtrl.getCarreraById); //falta las validaciones
+router.get('/carrera',carrerasMiddle.validaCarrerasExisten,carrerasCtrl.getCarreras); //faltan las validaciones
 router.post('/carreras', carrerasCtrl.createCarrera); //faltan las validaciones
-//router.post(`/series`,schemaValidator(serieSchema),seriesCtrl.createSerie)
+//router.post(`/carreras`,schemaValidator(carrerasSchema),carrerasCtrl.createSerie)
 
 
 module.exports = router
