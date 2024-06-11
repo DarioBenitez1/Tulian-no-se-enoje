@@ -7,8 +7,9 @@ const carrerasCtrl = require('../controllers/carrera.controller')
 
 const router = Router()
 
-
-router.get('/carrera/:id',carrerasCtrl.getCarreraById);
+//rutas
+router.get('/carrera/:id',carrerasCtrl.getCarreraById); //falta las validaciones
+router.post('/carreras', carrerasCtrl.createCarrera); //faltan las validaciones
 //router.post(`/series`,schemaValidator(serieSchema),seriesCtrl.createSerie)
 
 

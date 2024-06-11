@@ -6,31 +6,33 @@ const carreras = require('../../data/carreras.json');
     const id = req.params.id
     const carrera = carreras.find(s => s.id == id)
     if(!carrera){
-        res.status(404).json({error : 'carrera no encontrada'});
+       return res.status(404).json({error : 'carrera no encontrada'});
     }
     res.status(200).json(carrera)
  };
 
 
- 
-// seriesCtrl.createSerie = (req,res)=>{ 
-//     const serie=req.body //recupera lo que escribo en el body del postman.
-//     let id=1;
-//     if(series.length){ //si lenght es cero entonces devuelve falso
-//         const ids=series.map(s=>s.id)
-//         id=Math.max(...ids)+1
-//     }
+ //crear una carrera con un ID incremental
+carrerasCtrl.createCarrera = (req,res)=>{ 
+     const carrera=req.body //recupera lo que escribo en el body del postman.
+     let id=1; //empieza por defecto con 1 el ID 
+
+     if(carreras.length){ //si lenght es cero entonces devuelve falso
+        const ids=carreras.map(s=>s.id) //busca dentro de las carreras los ids
+         id=Math.max(...ids)+1  //busca el maximo id y le suma 1, para que se vaya incremantando
+     }
     
-//      //genero el id para el nuevo objeto de serie (no usar length porque se puede duplicar el id)
-//     //series.push({id,...serie})//agrega el nuevo objeto con el id y su valor.
-//     series.push(
-//         {id,
-//         serie:serie.serie,
-//         plataforma:serie.plataforma,
-//         disponible:!!serie.disponible //!! es doble negación. Si serie.disponible es undefined es false, al negarlo se transforma en true y al volver a negarlo se transforma en true.
-//     }); 
+      
+     //se agrega el nuevo objeto con el id y su valor.
+     carreras.push(
+         {
+         id,
+         nombre: carrera.nombre,
+         grado: carrera.grado,
+         universidad: carrera.universidad 
+     }); 
     
-//     res.status(201).json(series[series.length-1]);
-// }
+     res.status(201).json(carreras[carreras.length-1]);
+}
 
 module.exports = carrerasCtrl
