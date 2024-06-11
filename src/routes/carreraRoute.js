@@ -9,8 +9,8 @@ const router = Router()
 
 //rutas
 router.get('/carrera/:id',carrerasMiddle.validaExisteCarrera,carrerasCtrl.getCarreraById); 
-router.get('/carreras',carrerasCtrl.getCarreras); //faltan las validaciones
-router.post('/carreras', carrerasCtrl.createCarrera); //faltan las validaciones
+router.get('/carreras',carrerasMiddle.validaCarrerasExisten,carrerasCtrl.getCarreras);
+router.post('/carreras',carrerasMiddle.validarSolicitud, carrerasCtrl.createCarrera);
 //router.post(`/carreras`,schemaValidator(carrerasSchema),carrerasCtrl.createSerie)
 
 
