@@ -12,7 +12,7 @@
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
 - [Requerimientos](#requerimientos)
 - [Dependencias](#dependencias-packagejson)
-- [Uso](#uso)
+- [Package json](#package-json)
 - [Contacto](#contacto)
 
 ### Nombre del grupo: 
@@ -107,7 +107,7 @@ Esta API permite realizar todas las funcionalides CRUD para gestionar carreras y
     Dev
     "nodemon": "^3.1.0"
 
-### Uso
+### Package json
 ```javascript
 {
   "name": "api2",
@@ -132,6 +132,3 @@ Esta API permite realizar todas las funcionalides CRUD para gestionar carreras y
   }
 }
 ```
----
-### Contacto
-- ***dbenitez@unpaz.edu.ar***
