@@ -41,9 +41,15 @@ carrerasMiddle.validarSolicitud = (req, res, next) => {
   next();
 };
 
-/*carrerasMiddle.validaCarreraSinMaterias = (req, res, next) => {
-  
-}*/
+carrerasMiddle.validaCarreraSinMaterias = (req, res, next) => {
+  const id = req.params.id;
+  const materiasDeLaCarrera = materias.filter(m => m.carreraId == id)
+  if(materiasDeLaCarrera.length > 0){
+     console.log(materiasDeLaCarrera)
+     return res.status(400).json({message : 'no es posible eliminar una carrera con materias asignadas'});
+  }
+  next()
+}
 
 
 module.exports = carrerasMiddle;

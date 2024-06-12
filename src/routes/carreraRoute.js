@@ -11,7 +11,7 @@ const router = Router()
 router.get('/carreras/:id',carrerasMiddle.validaExisteCarrera,carrerasCtrl.getCarreraById); 
 router.get('/carreras',carrerasMiddle.validaCarrerasExisten,carrerasCtrl.getCarreras);
 router.post('/carreras',schemaValidator(carreraSchema),carrerasMiddle.validarSolicitud, carrerasCtrl.createCarrera);
-router.delete('/carreras/:id',carrerasMiddle.validaExisteCarrera ,carrerasCtrl.deleteCarreraById);
+router.delete('/carreras/:id',carrerasMiddle.validaExisteCarrera,carrerasMiddle.validaCarreraSinMaterias,carrerasCtrl.deleteCarreraById);
 
 
 module.exports = router
