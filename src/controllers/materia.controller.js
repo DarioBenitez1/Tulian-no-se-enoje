@@ -5,8 +5,9 @@ const carreras = require('../../data/carreras.json')
 //Crea una materia
 materiaCtrl.createMateria = (req, res) => {
     const materia =req.body //recupera lo que escribo en el body del postman.
+    const [nada1, nada2 ,carreraid ,nada3] = req.path.split("/");
+    const carrera = carreras.find(s => s.id == carreraid);
 
-    const carrera = carreras.find(s => s.id == materia.carreraId);
     if(!carrera){
        return res.status(404).json({mensaje: 'La carrera no fue encontrada'});
     };
@@ -25,7 +26,7 @@ materiaCtrl.createMateria = (req, res) => {
         nombre: materia.nombre,
         cuatrimestral: materia.grado,
         anio: materia.anio,
-        carreraId : materia.carreraId
+        carreraId : carreraid
     }); 
     
     res.status(201).json(materias[materias.length-1]);
