@@ -40,9 +40,6 @@ carrerasCtrl.deleteCarreraById = (req, res) => {
    const id = req.params.id;
    const carrera = carreras.find(s => s.id == id)
 
-   if(!carrera){
-      res.status(404).json({error: 'No es posible encontrar la carrera solicitada'})
-   }
    //aca hay dos opciones
       //1 - no se puede borrar porque el ID de carrera va a estar en materias.
       //2 - usar 'borrar materia' que tenga id de la carrera especificada. 
