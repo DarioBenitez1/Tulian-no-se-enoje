@@ -26,6 +26,9 @@
 ### Repositorio GitHub
   https://github.com/DarioBenitez1/Tulian-no-se-enoje.git
 
+### Introducción
+Este Trabajo practico tiene como fin aplicar los conocimientos adquiridos en todas las clases de la materia "Laboratorio de Programacion y Lenguajes", desarrollando desde cero una API Rest con la funcionalidad completa del CRUD (Create, Read, Update and Delete).
+
 ### Pasos para la instalación:
 
  1. abrir Terminal
@@ -48,8 +51,6 @@
       carreras\5 el recurso
     )
     
-### Introducción
-Este Trabajo practico tiene como fin aplicar los conocimientos adquiridos en todas las clases de la materia "Laboratorio de Programacion y Lenguajes", desarrollando desde cero una API Rest con la funcionalidad completa del CRUD (Create, Read, Update and Delete).
 
 ### Funcionalidades
 Esta API permite realizar todas las funcionalides CRUD para gestionar carreras y materias dentro de una universidad.
