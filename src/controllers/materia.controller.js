@@ -34,11 +34,9 @@ materiaCtrl.getMaterias = (req, res) => {
 
 //Obtener una materia mediante el ID de la carrera
 materiaCtrl.getMateriaByCarreraId = (req, res) => {
-        const carreraId = req.params.id;
-        const carrera = carreras.find(c => c.id == carreraId)
-        
-        const materiaaCarrera = materias.filter(m => m.carreraId == carreraId);
-        res.status(200).json(materiaaCarrera);
+        const carreraId = req.params.id;        
+        const materiaCarrera = materias.filter(m => m.carreraId == carreraId);
+        res.status(200).json(materiaCarrera);
 };
 
 //Obtener una materia mediante el ID
@@ -52,11 +50,6 @@ materiaCtrl.getMateriaById = (req,res) => {
  materiaCtrl.deleteMateriaById = (req, res) => {
     const id = req.params.id;
     const materia = materias.find(s => s.id == id)
- 
-    if(!materia){
-       res.status(404).json({error: 'No es posible encontrar la materia solicitada'})
-    }
-
     const index = materias.indexOf(materia);
     if(index > -1){
        materias.splice(index, 1);
