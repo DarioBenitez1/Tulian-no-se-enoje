@@ -94,7 +94,7 @@ Esta API permite realizar todas las funcionalides CRUD para gestionar carreras y
   }
 }
 ```
-# Como crear una API Rest de carreras & materias
+### ejemplo de como creer una estructura de este tipo
  1. abrir Terminal
  2. mkdir para crear la carpeta (nombre a eleccion)
  3. cd a la nueva carpeta
