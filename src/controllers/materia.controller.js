@@ -6,7 +6,6 @@ const carreras = require('../../data/carreras.json')
 materiaCtrl.createMateria = (req, res) => {
     const materia =req.body //recupera lo que escribo en el body del postman.
     const [nada1, nada2 ,carreraid ,nada3] = req.path.split("/");
-    const carrera = carreras.find(s => s.id == carreraid);
 
     let id=1; //empieza por defecto con 1 el ID 
 
