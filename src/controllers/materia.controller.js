@@ -8,10 +8,6 @@ materiaCtrl.createMateria = (req, res) => {
     const [nada1, nada2 ,carreraid ,nada3] = req.path.split("/");
     const carrera = carreras.find(s => s.id == carreraid);
 
-    if(!carrera){
-       return res.status(404).json({mensaje: 'La carrera no fue encontrada'});
-    };
-
     let id=1; //empieza por defecto con 1 el ID 
 
     if(materias.length){ //si lenght es cero entonces devuelve falso
@@ -39,14 +35,8 @@ materiaCtrl.getMaterias = (req, res) => {
 //Obtener una materia mediante el ID de la carrera
 materiaCtrl.getMateriaByCarreraId = (req, res) => {
         const carreraId = req.params.id;
-        
         const carrera = carreras.find(c => c.id == carreraId)
         
-        //agregar a middleware
-        if(!carrera){
-            return res.status(404).json({error : 'carrera no encontrada'});
-        };
-
         const materiaaCarrera = materias.filter(m => m.carreraId == carreraId);
         res.status(200).json(materiaaCarrera);
 };
