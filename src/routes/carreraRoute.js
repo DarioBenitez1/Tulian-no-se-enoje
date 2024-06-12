@@ -11,9 +11,6 @@ const router = Router()
 router.get('/carreras/:id',carrerasMiddle.validaExisteCarrera,carrerasCtrl.getCarreraById); 
 router.get('/carreras',carrerasMiddle.validaCarrerasExisten,carrerasCtrl.getCarreras);
 router.post('/carreras',schemaValidator(carreraSchema),carrerasMiddle.validarSolicitud, carrerasCtrl.createCarrera);
-router.post('/carreras',carrerasMiddle.validarSolicitud, carrerasCtrl.createCarrera);
-// ESTE METODO ES IGUAL AL 2DO GET
-router.get('/carreras',carrerasMiddle.validaCarrerasExisten ,carrerasCtrl.getCarreras);
 router.delete('/carreras/:id',carrerasMiddle.validaExisteCarrera ,carrerasCtrl.deleteCarreraById);
 
 
