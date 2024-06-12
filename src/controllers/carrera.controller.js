@@ -1,5 +1,5 @@
 const carrerasCtrl = {}
-const carreras = require('../../data/carreras.json');
+const carreras = require('../../data/carreras.json')
 
 //Obtener todas las carreras
 carrerasCtrl.getCarreras = (req,res) => {
@@ -40,6 +40,11 @@ carrerasCtrl.deleteCarreraById = (req, res) => {
    const id = req.params.id;
    const carrera = carreras.find(s => s.id == id)
 
+   const materiasDeLaCarrera = materias.filter(m => m.carreraId == id)
+   if(materiasDeLaCarrera.length > 0){
+      console.log(materiasDeLaCarrera)
+      return res.status(400).json({message : 'no es posible eliminar una carrera con materias asignadas'});
+   }
    //aca hay dos opciones
       //1 - no se puede borrar porque el ID de carrera va a estar en materias.
       //2 - usar 'borrar materia' que tenga id de la carrera especificada. 

@@ -1,4 +1,5 @@
 const carreras = require('../../data/carreras.json');
+const materias = require('../../data/materias.json')
 
 const carrerasMiddle = {};
 
@@ -39,6 +40,11 @@ carrerasMiddle.validarSolicitud = (req, res, next) => {
   //Si todo ok, pasa al siguiente middleware o al controlador
   next();
 };
+
+/*carrerasMiddle.validaCarreraSinMaterias = (req, res, next) => {
+  
+}*/
+
 
 module.exports = carrerasMiddle;
 
