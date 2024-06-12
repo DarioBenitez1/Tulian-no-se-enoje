@@ -24,7 +24,7 @@ materiaCtrl.createMateria = (req, res) => {
         {
         id,
         nombre: materia.nombre,
-        cuatrimestral: materia.grado,
+        cuatrimestral: materia.cuatrimestral,
         anio: materia.anio,
         carreraId : carreraid
     }); 
