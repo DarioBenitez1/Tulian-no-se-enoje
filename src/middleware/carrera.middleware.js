@@ -2,7 +2,7 @@ const carreras = require('../../data/carreras.json');
 
 const carrerasMiddle = {};
 
-//valida que existan series con el ID ingresado
+//valida que existan carreras con el ID ingresado
 carrerasMiddle.validaExisteCarrera = (req, res, next) => {
   const id = req.params.id;
   const idx = carreras.findIndex(s => s.id == id);
