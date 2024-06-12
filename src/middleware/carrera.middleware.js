@@ -40,6 +40,5 @@ carrerasMiddle.validarSolicitud = (req, res, next) => {
   next();
 };
 
-
 module.exports = carrerasMiddle;
 

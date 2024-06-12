@@ -2,15 +2,14 @@ const materiaCtrl = {};
 const materias = require('../../data/materias.json');
 const carreras = require('../../data/carreras.json')
 
+//Crea una materia
 materiaCtrl.createMateria = (req, res) => {
     const materia =req.body //recupera lo que escribo en el body del postman.
-
 
     const carrera = carreras.find(s => s.id == materia.carreraId);
     if(!carrera){
        return res.status(404).json({mensaje: 'La carrera no fue encontrada'});
     };
-
 
     let id=1; //empieza por defecto con 1 el ID 
 
@@ -19,7 +18,6 @@ materiaCtrl.createMateria = (req, res) => {
         id=Math.max(...ids)+1  //busca el maximo id y le suma 1, para que se vaya incremantando
     }
    
-    
     //se agrega el nuevo objeto con el id y su valor.
     materias.push(
         {
@@ -30,7 +28,6 @@ materiaCtrl.createMateria = (req, res) => {
         carreraId : materia.carreraId
     }); 
     
-    
     res.status(201).json(materias[materias.length-1]);
 };
 
@@ -38,6 +35,7 @@ materiaCtrl.getMaterias = (req, res) => {
     res.status(200).json(materias);
 };
 
+//Obtener una materia mediante el ID de la carrera
 materiaCtrl.getMateriaByCarreraId = (req, res) => {
         const carreraId = req.params.id;
         
@@ -50,7 +48,29 @@ materiaCtrl.getMateriaByCarreraId = (req, res) => {
 
         const materiaaCarrera = materias.filter(m => m.carreraId == carreraId);
         res.status(200).json(materiaaCarrera);
-     
 };
+
+//Obtener una materia mediante el ID
+materiaCtrl.getMateriaById = (req,res) => {
+    const id = req.params.id
+    const materia = materias.find(s => s.id == id)
+    res.status(200).json(materia)
+ };
+
+//Borrar una materia mediante el ID
+ materiaCtrl.deleteMateriaById = (req, res) => {
+    const id = req.params.id;
+    const materia = materias.find(s => s.id == id)
+ 
+    if(!materia){
+       res.status(404).json({error: 'No es posible encontrar la materia solicitada'})
+    }
+
+    const index = materias.indexOf(materia);
+    if(index > -1){
+       materias.splice(index, 1);
+       res.status(200).json({message : 'materia borrada exitosamente'});
+    }
+ };
 
 module.exports = materiaCtrl;

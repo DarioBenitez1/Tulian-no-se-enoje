@@ -1,5 +1,4 @@
 const materias = require('../../data/materias.json');
-//const materiaCtrl = require('../controllers/materia.controller');
 const materiasMiddle = {};
 
 materiasMiddle.validaExisteMateria = (req, res, next) => {
