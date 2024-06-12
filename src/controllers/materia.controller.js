@@ -1,6 +1,5 @@
 const materiaCtrl = {};
 const materias = require('../../data/materias.json');
-const carreras = require('../../data/carreras.json')
 
 //Crea una materia
 materiaCtrl.createMateria = (req, res) => {
