@@ -30,7 +30,7 @@ materiaCtrl.getMaterias = (req, res) => {
     res.status(200).json(materias);
 };
 
-//Obtener una materia mediante el ID de la carrera
+//Obtener las materias mediante el ID de la carrera
 materiaCtrl.getMateriaByCarreraId = (req, res) => {
         const carreraId = req.params.id;        
         const materiaCarrera = materias.filter(m => m.carreraId == carreraId);

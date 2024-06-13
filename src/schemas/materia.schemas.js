@@ -16,9 +16,14 @@ const materiaSchema = Joi.object().keys(
             "number.max": "anio debe tener como maximo {#limit}",
             "any.required": "anio es requerida",
             "any.empty": "anio no puede estar vacio"          
-          })
+          }),
+          carreraId : Joi.number().integer().max(20).required().messages({
+            "number.max": "carreraId debe tener como maximo {#limit}",
+            "any.required": "carreraId es requerida",
+            "any.empty": "carreraId no puede estar vacio"
      }
  )
+})
 
 
 module.exports = materiaSchema
